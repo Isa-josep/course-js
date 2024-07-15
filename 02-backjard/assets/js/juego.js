@@ -26,9 +26,16 @@ const haveAnewcard=()=>{
         throw 'No hay cartas en el deck';
     }
     const card=deck.pop();
-    console.log(deck);
+    console.log({deck});
     return card;
 }
+
+const valorcard=(card)=>{
+    const value=card.substring(0,card.length-1);
+    return (isNaN(value)) ? (value==='A') ? 11 : 10 : value*1;
+
+}
+console.log(valorcard('JD'));
 console.log(haveAnewcard());
 
 
